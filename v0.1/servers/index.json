@@ -1,50 +1,88 @@
 {
   "servers": [
     {
-      "name": "io.github.github/github-mcp-server",
-      "description": "Official GitHub MCP Server",
-      "version": "1.0.0",
-      "remotes": [
-        {
-          "transport_type": "http",
-          "url": "https://api.githubcopilot.com/mcp/"
+      "server": {
+        "$schema": "https://modelcontextprotocol.io",
+        "name": "io.github.github/github-mcp-server",
+        "description": "Official GitHub MCP Server",
+        "version": "1.0.0",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://githubcopilot.com"
+          }
+        ]
+      },
+      "_meta": {
+        "io.modelcontextprotocol.registry/official": {
+          "status": "active",
+          "publishedAt": "2026-01-01T00:00:00Z",
+          "updatedAt": "2026-01-01T00:00:00Z",
+          "isLatest": true
         }
-      ]
+      }
     },
     {
-      "name": "com.microsoft/playwright-mcp",
-      "description": "Browser automation and end-to-end testing with Playwright",
-      "version": "1.0.0",
-      "packages": [
-        {
-          "registry_name": "npm",
-          "name": "@playwright/mcp",
-          "version": "latest"
-        }
-      ]
-    },
-    {
-      "name": "com.microsoft/azure-mcp",
-      "description": "Official Azure MCP Server for managing and querying Azure resources",
-      "version": "1.0.0",
-      "packages": [
-        {
-          "registry_name": "npm",
-          "name": "@azure/mcp",
-          "version": "latest",
-          "runtime_hint": "npx",
-          "package_arguments": [
-            {
-              "type": "positional",
-              "value": "server"
-            },
-            {
-              "type": "positional",
-              "value": "start"
+      "server": {
+        "$schema": "https://modelcontextprotocol.io",
+        "name": "com.microsoft/playwright-mcp",
+        "description": "Browser automation and end-to-end testing with Playwright",
+        "version": "1.0.0",
+        "packages": [
+          {
+            "registryType": "npm",
+            "identifier": "@playwright/mcp",
+            "version": "latest",
+            "transport": {
+              "type": "stdio"
             }
-          ]
+          }
+        ]
+      },
+      "_meta": {
+        "io.modelcontextprotocol.registry/official": {
+          "status": "active",
+          "publishedAt": "2026-01-01T00:00:00Z",
+          "updatedAt": "2026-01-01T00:00:00Z",
+          "isLatest": true
         }
-      ]
+      }
+    },
+    {
+      "server": {
+        "$schema": "https://modelcontextprotocol.io",
+        "name": "com.microsoft/azure-mcp",
+        "description": "Official Azure MCP Server for managing and querying Azure resources",
+        "version": "1.0.0",
+        "packages": [
+          {
+            "registryType": "npm",
+            "identifier": "@azure/mcp",
+            "version": "latest",
+            "transport": {
+              "type": "stdio"
+            },
+            "packageArguments": [
+              {
+                "type": "positional",
+                "value": "server"
+              },
+              {
+                "type": "positional",
+                "value": "start"
+              }
+            ]
+          }
+        ]
+      },
+      "_meta": {
+        "io.modelcontextprotocol.registry/official": {
+          "status": "active",
+          "publishedAt": "2026-01-01T00:00:00Z",
+          "updatedAt": "2026-01-01T00:00:00Z",
+          "isLatest": true
+        }
+      }
     }
   ],
   "metadata": {
