@@ -1,0 +1,53 @@
+{
+  "servers": [
+    {
+      "name": "io.github.github/github-mcp-server",
+      "description": "Official GitHub MCP Server",
+      "version": "1.0.0",
+      "remotes": [
+        {
+          "transport_type": "http",
+          "url": "https://api.githubcopilot.com/mcp/"
+        }
+      ]
+    },
+    {
+      "name": "com.microsoft/playwright-mcp",
+      "description": "Browser automation and end-to-end testing with Playwright",
+      "version": "1.0.0",
+      "packages": [
+        {
+          "registry_name": "npm",
+          "name": "@playwright/mcp",
+          "version": "latest"
+        }
+      ]
+    },
+    {
+      "name": "com.microsoft/azure-mcp",
+      "description": "Official Azure MCP Server for managing and querying Azure resources",
+      "version": "1.0.0",
+      "packages": [
+        {
+          "registry_name": "npm",
+          "name": "@azure/mcp",
+          "version": "latest",
+          "runtime_hint": "npx",
+          "package_arguments": [
+            {
+              "type": "positional",
+              "value": "server"
+            },
+            {
+              "type": "positional",
+              "value": "start"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 3
+  }
+}
